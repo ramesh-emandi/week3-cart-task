@@ -39,8 +39,10 @@ class JacketsViewState extends State<JacketsView> {
               child: InkWell(
                 onTap: () {
                   DataApi().saveDataToFavoritesDataBase(jacketsData[index]);
-                  HomeRootWidget.tabsKey.currentState.tabController
-                      .animateTo(2);
+                  Scaffold.of(context).showSnackBar(SnackBar(
+                    content: Text('Added to Favorites'),
+                    duration: Duration(seconds: 3),
+                  ));
                 },
                 child: new Card(
                     color: cardColor,

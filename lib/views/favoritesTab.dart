@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_shopping_task_w3/db/modals/favorites_modal.dart';
 import 'package:flutter_shopping_task_w3/db/tablehelpers/favoritesHelper.dart';
+import 'package:flutter_shopping_task_w3/main.dart';
 
 
 class FavoritesView extends StatefulWidget {
@@ -146,7 +147,7 @@ class _FavoritesViewState extends State<FavoritesView> {
         backgroundColor: Colors.white,
         leading: GestureDetector(
           onTap: (){
-            Navigator.of(context).pop();
+            HomeRootWidget.tabsKey.currentState.tabController.animateTo(0);
           },
               child: Icon(Icons.arrow_back_ios,size: 20.0,color: Colors.black,),
             ),

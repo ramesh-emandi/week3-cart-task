@@ -43,7 +43,7 @@ class _HomeViewState extends State<HomeView> with SingleTickerProviderStateMixin
     apiInstance.getJacketsData(context);
     tabController = TabController(
       length: 4,
-      initialIndex: 1,
+      initialIndex: 0,
       vsync: this
     );
   }

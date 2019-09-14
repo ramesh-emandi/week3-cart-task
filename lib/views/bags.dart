@@ -37,7 +37,11 @@ class _BagsViewState extends State<BagsView> {
                 splashColor: Colors.deepPurple,
                 onTap: (){
                   DataApi().saveDataToFavoritesDataBase(bagsData[index]);
-                  HomeRootWidget.tabsKey.currentState.tabController.animateTo(2);
+                  Scaffold.of(context).showSnackBar(SnackBar(
+                    content: Text('Added to Favorites'),
+                    duration: Duration(seconds: 3),
+                  ));
+//                  HomeRootWidget.tabsKey.currentState.tabController.animateTo(2);
                 },
                 child: new Card(
 

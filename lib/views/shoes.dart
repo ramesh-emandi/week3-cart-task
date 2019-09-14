@@ -40,7 +40,10 @@ class _ShoesViewState extends State<ShoesView> {
               child: InkWell(
                 onTap: (){
                   DataApi().saveDataToFavoritesDataBase(shoesData[index]);
-                  HomeRootWidget.tabsKey.currentState.tabController.animateTo(2);
+                  Scaffold.of(context).showSnackBar(SnackBar(
+                    content: Text('Added to Favorites'),
+                    duration: Duration(seconds: 3),
+                  ));
                 },
                 child: new Card(
                     color: cardColor,
